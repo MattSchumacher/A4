@@ -1,0 +1,21 @@
+<ion-header color="primary">
+  <ion-toolbar>
+    <ion-title>Top Stories</ion-title>
+    <ion-button slot="secondary" [routerLink]="['/favourite']">
+      <ion-icon name='heart' color='danger'></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar ngModel (ionChange)="updateSearch($event)" showCancelButton="focus"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let item of displayedArticles" [routerLink]="['/article', item.title]">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{item.title}}</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>
