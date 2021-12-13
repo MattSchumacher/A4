@@ -14,13 +14,6 @@ export class FavouritePage implements OnInit {
   set;
 
   constructor ( private databaseService: DatabaseService ) { }
-  // shownArticles: SavedArticle[];
-  // ngOnInit() {
-  //   this.storage.get('articles').then(articles =>{
-  //     this.savedArticles = articles;
-  //     this.shownArticles = articles;
-  //   })
-  // }
 
   ngOnInit() {
     this.databaseService.getDatabaseState().subscribe( async ( ready ) => {
